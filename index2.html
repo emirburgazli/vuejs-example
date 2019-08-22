@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="postShowAlert('emir')">alert göster</button>
+        <button v-on:click="showAlert">sayac göster</button>
+        <button v-on:click="counter++">arttır</button>
+        <button v-on:click="increaseCounter">arttır</button>
+        <p> {{ counter >= 10 ? "10 dan büyük" : "10dan kücük "}}</p>
+        <p> {{ counter}}</p>
+        <p v-on:mousemove="updateCoords">Kordinatlar :  {{x}}, {{y}}
+        <span v-on:mousemove.stop>Gizli Bölmes</span> </p>
+        </div>
+      
+
+    <script type=text/javascript>
+  new Vue({
+  el: "#app",
+  data:{
+  counter:0,
+  x:0,
+  y:0
+  	},
+ methods: {
+ showAlert: function(){
+	 alert(this.counter);
+ 		},
+increaseCounter: function(){
+
+this.counter++;
+		},
+    updateCoords:function(event){
+   	this.x = event.clientX;
+    this.y=event.clientY;
+    },
+    postShowAlert: function(name){
+    alert(name);
+        }
+	}
+});
+  
+</script>
+</body>
+</html>

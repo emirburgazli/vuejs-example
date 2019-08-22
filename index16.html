@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app1">
+   <h1> {{ title }}</h1>
+</div>
+
+<div id="app2">
+    <button @click="changeTitle()">değiştir</button>
+ </div>
+
+<script type="text/javascript">
+var vm1 =new Vue({
+el: "#app1",
+data: {
+    title:"emir burgazli"
+}
+});
+setTimeout(function(){
+    vm1.title="timer tarafından değiştirldi.!!"
+},2000)
+var vm2 = new Vue({
+el: "#app2",
+methods : {
+    changeTitle : function(){
+        vm1.title="ecrin burgazli";
+}
+}
+})
+
+</script>   

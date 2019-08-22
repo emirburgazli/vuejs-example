@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+<p v-if="show">Beni Görebilirsin!! </p>
+<p v-else>Beni Görebilir Misin Acaba? :)</p>
+<button @click="show=!show"> Göster | Gizle</button>
+
+<p v-if="sayi<10">sayi 10 dan küçüktür</p>
+<p v-else-if="sayi>10">sayi 10 dan büyüktür</p>
+<p v-else>sayi 10 a eşittir</p>
+<hr>
+<button @click="showparagh= !showparagh">Göster|Gizle</button>
+<p v-show="showparagh">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.</p>
+</div>
+
+<script type="text/javascript">
+    new Vue({
+    el: "#app",
+    data: {
+       show:false,
+       sayi:10,
+       showparagh:false
+    },
+    methods: {
+ 
+    },
+    watch:{
+
+    },
+    computed:{
+
+    }
+    
+    })
+    </script>   

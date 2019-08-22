@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+ <button v-on:click="counter++">arttır</button>
+ <button v-on:click="counter--">azalt</button>
+ <button v-on:click="secondCounter++">2.counter arttır</button>
+    <p> Counter :  {{ counter }}  | {{ secondCounter }}</p>
+    <p> {{ result() }}  | {{ output }}</p>
+</div>
+
+<script type="text/javascript">
+new Vue({
+el: "#app",
+data: {
+    counter: 0,
+    secondCounter:0
+},
+   methods :  {
+result: function(){
+   console.log("method çalıştı");
+    return this.counter > 10 ? "10dan büyüktür" : "10dan küçüktür."
+}
+    },
+    computed : {
+        output: function(){
+            console.log("computed çalıştı..");
+            return this.secondCounter > 10 ? "10dan büyüktür" : "10dan küçüktür."
+        }
+    },
+    watch: {
+        counter: function(value){
+            vm=this;
+            setTimeout(function(){
+                vm.counter = 0;
+            },1500)
+        } 
+    }
+})
+</script>   

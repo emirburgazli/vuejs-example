@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+  <my-comp> </my-comp>
+</div>
+<hr>
+<div id="app2">
+    <my-comp> </my-comp>
+  </div>
+
+<script type="text/javascript">
+  var cmp = {
+    data: function() {
+      return {
+        status: "pasif"
+      };
+    },
+    template:
+      '<p> Sunucu Durumu : {{ status }} (<button @click="changeStatus">değiştir</button>) </p>',
+    methods: {
+      changeStatus: function() {
+        this.status = "Aktif";
+      }
+    }
+  }
+
+  new Vue({
+    el: "#app",
+    components : {
+       "my-comp": cmp
+        }
+  })
+
+  new Vue({
+    el: "#app2"
+  })
+</script>

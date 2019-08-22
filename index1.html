@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"> 
+        <p v-once>{{title}}</p>
+        <p>{{ hello() }} <a v-bind:href="link">Link</a></p>
+        <p v-html="blogLink"></p>
+        </div>
+      
+    <script type=text/javascript>
+    new Vue({
+el : "#app",
+data:{
+		 title: "merhaba Dünya",
+     message: "emir burgazli !!",
+ 		 link:"https://buraksenyurt.com",
+     blogLink:" <a href='https://webmaster.kitchen/dom-document-object-model-nedir/'>Link</a>"
+    },
+   methods:{
+     hello: function(){
+     this.title="merhaba !!"
+     return this.title
+     
+     }
+      }
+});
+</script>
+</body>
+</html>
